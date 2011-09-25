@@ -1,0 +1,282 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		84B95438142F31EA00B816CE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B95437142F31EA00B816CE /* UIKit.framework */; };
+		84B9543A142F31EA00B816CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B95439142F31EA00B816CE /* Foundation.framework */; };
+		84B9543C142F31EA00B816CE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B9543B142F31EA00B816CE /* CoreGraphics.framework */; };
+		84B9543E142F31EA00B816CE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B9543D142F31EA00B816CE /* CoreData.framework */; };
+		84B95444142F31EB00B816CE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84B95442142F31EB00B816CE /* InfoPlist.strings */; };
+		84B95446142F31EB00B816CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B95445142F31EB00B816CE /* main.m */; };
+		84B9544A142F31EB00B816CE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B95449142F31EB00B816CE /* AppDelegate.m */; };
+		84B9544D142F31EB00B816CE /* MinskTaxi.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84B9544B142F31EB00B816CE /* MinskTaxi.xcdatamodeld */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		84B95433142F31EA00B816CE /* MinskTaxi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinskTaxi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84B95437142F31EA00B816CE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		84B95439142F31EA00B816CE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		84B9543B142F31EA00B816CE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		84B9543D142F31EA00B816CE /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		84B95441142F31EB00B816CE /* MinskTaxi-Info.plist */ = {isa = PBXFileReference; path = "MinskTaxi-Info.plist"; sourceTree = "<group>"; };
+		84B95443142F31EB00B816CE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		84B95445142F31EB00B816CE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		84B95447142F31EB00B816CE /* MinskTaxi-Prefix.pch */ = {isa = PBXFileReference; path = "MinskTaxi-Prefix.pch"; sourceTree = "<group>"; };
+		84B95448142F31EB00B816CE /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		84B95449142F31EB00B816CE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		84B9544C142F31EB00B816CE /* MinskTaxi.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MinskTaxi.xcdatamodel; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84B95430142F31EA00B816CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84B95438142F31EA00B816CE /* UIKit.framework in Frameworks */,
+				84B9543A142F31EA00B816CE /* Foundation.framework in Frameworks */,
+				84B9543C142F31EA00B816CE /* CoreGraphics.framework in Frameworks */,
+				84B9543E142F31EA00B816CE /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		84B95428142F31EA00B816CE = {
+			isa = PBXGroup;
+			children = (
+				84B9543F142F31EA00B816CE /* MinskTaxi */,
+				84B95436142F31EA00B816CE /* Frameworks */,
+				84B95434142F31EA00B816CE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		84B95434142F31EA00B816CE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84B95433142F31EA00B816CE /* MinskTaxi.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84B95436142F31EA00B816CE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84B95437142F31EA00B816CE /* UIKit.framework */,
+				84B95439142F31EA00B816CE /* Foundation.framework */,
+				84B9543B142F31EA00B816CE /* CoreGraphics.framework */,
+				84B9543D142F31EA00B816CE /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84B9543F142F31EA00B816CE /* MinskTaxi */ = {
+			isa = PBXGroup;
+			children = (
+				84B95448142F31EB00B816CE /* AppDelegate.h */,
+				84B95449142F31EB00B816CE /* AppDelegate.m */,
+				84B9544B142F31EB00B816CE /* MinskTaxi.xcdatamodeld */,
+				84B95440142F31EB00B816CE /* Supporting Files */,
+			);
+			path = MinskTaxi;
+			sourceTree = "<group>";
+		};
+		84B95440142F31EB00B816CE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				84B95441142F31EB00B816CE /* MinskTaxi-Info.plist */,
+				84B95442142F31EB00B816CE /* InfoPlist.strings */,
+				84B95445142F31EB00B816CE /* main.m */,
+				84B95447142F31EB00B816CE /* MinskTaxi-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84B95432142F31EA00B816CE /* MinskTaxi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84B95450142F31EB00B816CE /* Build configuration list for PBXNativeTarget "MinskTaxi" */;
+			buildPhases = (
+				84B9542F142F31EA00B816CE /* Sources */,
+				84B95430142F31EA00B816CE /* Frameworks */,
+				84B95431142F31EA00B816CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MinskTaxi;
+			productName = MinskTaxi;
+			productReference = 84B95433142F31EA00B816CE /* MinskTaxi.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84B9542A142F31EA00B816CE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 84B9542D142F31EA00B816CE /* Build configuration list for PBXProject "MinskTaxi" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 84B95428142F31EA00B816CE;
+			productRefGroup = 84B95434142F31EA00B816CE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84B95432142F31EA00B816CE /* MinskTaxi */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84B95431142F31EA00B816CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84B95444142F31EB00B816CE /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84B9542F142F31EA00B816CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84B95446142F31EB00B816CE /* main.m in Sources */,
+				84B9544A142F31EB00B816CE /* AppDelegate.m in Sources */,
+				84B9544D142F31EB00B816CE /* MinskTaxi.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		84B95442142F31EB00B816CE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84B95443142F31EB00B816CE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		84B9544E142F31EB00B816CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		84B9544F142F31EB00B816CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84B95451142F31EB00B816CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MinskTaxi/MinskTaxi-Prefix.pch";
+				INFOPLIST_FILE = "MinskTaxi/MinskTaxi-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		84B95452142F31EB00B816CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MinskTaxi/MinskTaxi-Prefix.pch";
+				INFOPLIST_FILE = "MinskTaxi/MinskTaxi-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84B9542D142F31EA00B816CE /* Build configuration list for PBXProject "MinskTaxi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84B9544E142F31EB00B816CE /* Debug */,
+				84B9544F142F31EB00B816CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84B95450142F31EB00B816CE /* Build configuration list for PBXNativeTarget "MinskTaxi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84B95451142F31EB00B816CE /* Debug */,
+				84B95452142F31EB00B816CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		84B9544B142F31EB00B816CE /* MinskTaxi.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				84B9544C142F31EB00B816CE /* MinskTaxi.xcdatamodel */,
+			);
+			currentVersion = 84B9544C142F31EB00B816CE /* MinskTaxi.xcdatamodel */;
+			path = MinskTaxi.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 84B9542A142F31EA00B816CE /* Project object */;
+}
