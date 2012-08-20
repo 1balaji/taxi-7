@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  MinskTaxi
+
+  Created by ml on 10/30/11.
+  Copyright (c) 2011 ml. All rights reserved.
+*/
+
+"RouteEnd" = "Конец:";
+"RouteStart" = "Начало:";
+"Pin" = "Булавка";
+"RouteNotFound" = "Маршрут не найден";
+"Current Location" = "Текущее размещение";
+"TaxiServises" = "Службы Такси";
+"Back" = "Назад";
+"Tarifs" = "Тарифы";
+"Phones" = "Телефоны";
+"TaxiMinsk" = "Такси Минск";
+"Total" = "Итого";

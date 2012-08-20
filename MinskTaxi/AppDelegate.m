@@ -6,29 +6,46 @@
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 #import "AppDelegate.h"
+#import "MTMapView.h"
+#import "TaxiServicesModelController.h"
+
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 @implementation AppDelegate
 
 @synthesize window = _window;
-@synthesize managedObjectContext = __managedObjectContext;
-@synthesize managedObjectModel = __managedObjectModel;
-@synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
+@synthesize managedObjectContext;
+@synthesize managedObjectModel;
+@synthesize persistentStoreCoordinator;
 
 - (void)dealloc
 {
     [_window release];
-    [__managedObjectContext release];
-    [__managedObjectModel release];
-    [__persistentStoreCoordinator release];
+    [managedObjectContext release];
+    [managedObjectModel release];
+    [persistentStoreCoordinator release];
     [super dealloc];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+//    instrumentObjcMessageSends(YES); //fantastic! turn on trace log (/tmp/msgSends-pid)
+    
+    TaxiServicesModelController *taxiServicesModelController = [TaxiServicesModelController new];
+    taxiServicesModelController.managedObjectContext = self.managedObjectContext;
+    [taxiServicesModelController fetchCurrentTaxiRatesFromServer];
+    [taxiServicesModelController release];
+    
+    MTMapView *mlMapView=[[MTMapView alloc] init];
+    mlMapView.managedObjectContext = self.managedObjectContext;
+    UINavigationController *nc = [[[UINavigationController alloc] initWithRootViewController:mlMapView] autorelease];
+	[mlMapView release];
+    nc.view.backgroundColor = UIColorFromRGB(0x697C9D);
+    
+    nc.navigationBarHidden = YES;
+    self.window.rootViewController = nc;
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -61,6 +78,7 @@
     /*
      Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
      */
+    
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -72,10 +90,10 @@
 - (void)saveContext
 {
     NSError *error = nil;
-    NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
-    if (managedObjectContext != nil)
+    NSManagedObjectContext *moc = self.managedObjectContext;
+    if (moc != nil)
     {
-        if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error])
+        if ([moc hasChanges] && ![moc save:&error])
         {
             /*
              Replace this implementation with code to handle the error appropriately.
@@ -96,18 +114,18 @@
  */
 - (NSManagedObjectContext *)managedObjectContext
 {
-    if (__managedObjectContext != nil)
+    if (managedObjectContext != nil)
     {
-        return __managedObjectContext;
+        return managedObjectContext;
     }
     
     NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
     if (coordinator != nil)
     {
-        __managedObjectContext = [[NSManagedObjectContext alloc] init];
-        [__managedObjectContext setPersistentStoreCoordinator:coordinator];
+        managedObjectContext = [[NSManagedObjectContext alloc] init];
+        [managedObjectContext setPersistentStoreCoordinator:coordinator];
     }
-    return __managedObjectContext;
+    return managedObjectContext;
 }
 
 /**
@@ -116,13 +134,13 @@
  */
 - (NSManagedObjectModel *)managedObjectModel
 {
-    if (__managedObjectModel != nil)
+    if (managedObjectModel != nil)
     {
-        return __managedObjectModel;
+        return managedObjectModel;
     }
     NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"MinskTaxi" withExtension:@"momd"];
-    __managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
-    return __managedObjectModel;
+    managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+    return managedObjectModel;
 }
 
 /**
@@ -131,16 +149,16 @@
  */
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator
 {
-    if (__persistentStoreCoordinator != nil)
+    if (persistentStoreCoordinator != nil)
     {
-        return __persistentStoreCoordinator;
+        return persistentStoreCoordinator;
     }
     
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"MinskTaxi.sqlite"];
     
     NSError *error = nil;
-    __persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-    if (![__persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error])
+    persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
+    if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error])
     {
         /*
          Replace this implementation with code to handle the error appropriately.
@@ -169,7 +187,7 @@
         abort();
     }    
     
-    return __persistentStoreCoordinator;
+    return persistentStoreCoordinator;
 }
 
 #pragma mark - Application's Documents directory
